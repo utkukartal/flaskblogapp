@@ -1,0 +1,45 @@
+{% extends "layout1.html" %}
+
+{% block body %}
+<div class="jumbotron text-center">
+    <h3>Yazılım Bilimi Bloğuna Hoşgeldiniz</h3>
+    <p>Bu blokgta geliştiriciler olarak bloga yazılarınızı paylaşabilirsiniz ve insanlara yardımcı olabilirsiniz.</p>
+</div>
+{% endblock body %}
+
+
+<!--
+Kullanıp sildiğimiz yöntemler ve denemeler belki işe yarar diye aşağıda tutuyorum eskiden yeniye gidiyor. Hepsinin en üstünde blog3.py den gelen parametre varsa o belirtiliyor.
+
+islem = 1
+Burada koşullu durumları görüyoruz, tabi return.template yaparken koşulu kontrol edilecek değerin de dönmesi gerekiyor.
+{% if islem == 1 %} 
+<p>Birinci işlem.</p> 
+{% elif islem == 2 %}
+<p>İkinci işlem.</p>
+{% else %}
+<p>Geçersiz işlem.</p>
+{% endif %}
+
+
+numbers = [0,1,2,3,4,5]
+Burada for döngüsünü görüyoruz, girilen liste üzerinde dolaşıyoruz. yukarıdaki gibi return.template ile listenin de gelmesi gerekiyor.
+<ul>  Listeler için ul kullanıyorduk. 
+    {% for number in numbers %}
+        <li>{{number}}</li>  Liste elemanını da bununla tanımlıyoruz. Numbers listesinin elemanı number bir python verisi olduğu için çifte süslü.
+    {% endfor %}
+</ul>
+
+
+articles = [
+        {"id":1, "title":"Deneme1","content":"Deneme1 içerik"},
+        {"id":2, "title":"Deneme2","content":"Deneme2 içerik"},
+        {"id":3, "title":"Deneme3","content":"Deneme3 içerik"}
+        ]
+Burada da yukarıdakinden pek farklı bir şey yapmıyoruz. Liste içindeki sözlüklerden veri alıyoruz.
+<ul>
+    {% for article in articles %}
+        <li>Articl Id: {{article.id}} - Title: {{article.title}} - Content: {{article.content}}</li>
+    {% endfor %}
+</ul>
+-->

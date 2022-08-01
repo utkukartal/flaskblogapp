@@ -1,0 +1,21 @@
+{% extends "layout1.html" %}
+
+{% block body %}
+    <h3>Makaleler</h3>
+    <hr>
+
+    {% if articles %}
+        <form action="/search" method="post">  <!--Search barı buraya koyduk, navigasyon bara koysak daha iyi olabilirdi sanki, burada olunca sadece articles a bakarken görünecek-->
+            <input type="text" class="input-sm" name="keyword" maxlength="64" placeholder="Ara..."/>
+            <button type="submit" class="btn btn-danger" href="/search">Ara</button>
+        </form>
+        <hr>
+        <ul class="list-group">
+            {% for article in articles %}
+                <li class="list-group-item"><a href="article/{{article.id}}">{{article.title}}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div class="alert alert-danger">Bu blogta henüz makale bulunmuyor.</div>
+    {% endif %}
+{% endblock body %}
